@@ -1,3 +1,8 @@
+"""
+    This is a one time code.
+    It's main purpose is to create the database that we are going to use for this project
+ """
+
 import os
 import mysql.connector
 from dotenv import load_dotenv
