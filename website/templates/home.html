@@ -3,7 +3,7 @@
 <div class="col-md-6 offset-md-3">
   {% if user.is_authenticated %}
 
-  <h1>Welcome back</h1>
+  <h1>Welcome To Our CRM</h1>
 
   {% else %}
 
@@ -12,27 +12,26 @@
 
   <form method="POST" action="{% url 'home' %}">
     {% csrf_token %}
-    <form>
-      <div class="mb-3">
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          placeholder="Username"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          placeholder="Password"
-          required
-        />
-      </div>
-      <button type="submit" class="btn btn-secondary">Login</button>
-    </form>
+
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        placeholder="Username"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-secondary">Login</button>
   </form>
 </div>
 {% endif %} {% endblock %}
