@@ -1,14 +1,31 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Customer Record:</h1>
 
-{{ customer_record.id }} <br />
-{{ customer_record.firstName }} {{ customer_record.lastName }} <br />
-{{ customer_record.email }} <br />
-{{ customer_record.phone }} <br />
-{{ customer_record.address }} <br />
-{{ customer_record.city }} <br />
-{{ customer_record.state }} <br />
-{{ customer_record.zipcode }} <br />
-{{ customer_record.dateOfCreation }} <br />
+<div class="card">
+  <div class="card-header">
+    <h3>{{ customer_record.firstName }} {{ customer_record.lastName }}</h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Customer ID: </strong>{{ customer_record.id }}
+    </p>
+    <p class="card-text"><strong>Email: </strong>{{ customer_record.email }}</p>
+    <p class="card-text"><strong>Phone: </strong>{{ customer_record.phone }}</p>
+    <p class="card-text">
+      <strong>Address: </strong>{{ customer_record.address }}
+    </p>
+    <p class="card-text"><strong>City: </strong>{{ customer_record.city }}</p>
+    <p class="card-text"><strong>State: </strong>{{ customer_record.state }}</p>
+    <p class="card-text">
+      <strong>Zipcode: </strong>{{ customer_record.zipcode }}
+    </p>
+    <p class="card-text">
+      <strong> Date of Creation: </strong>{{ customer_record.dateOfCreation }}
+    </p>
+  </div>
+</div>
+
+<br />
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="" class="btn btn-danger">Delete</a>
 
 {% endblock content %}
