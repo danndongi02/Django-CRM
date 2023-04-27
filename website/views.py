@@ -19,7 +19,7 @@ def home(request):
             return redirect('home')
         else:
             messages.success(
-                request, "There Was An Error Logging In, Please Try Again...")
+                request, "Incorrect Username Or Password. Please Try Again...")
             return redirect('home')
 
     else:
