@@ -37,8 +37,9 @@ def logout_user(request):
     messages.success(request, "Logged out successfully!")
     return redirect('home')
 
-
 # Register a new user
+
+
 def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
@@ -74,4 +75,18 @@ def customer_record(request, pk):
     else:
         messages.success(request, "You Must Be Logged In To View That Page!")
 
+        return redirect('home')
+
+# Deleting a record
+
+
+def delete_record(request, pk):
+    if request.user.is_authenticated:
+        delete = Record.objects.get(id=pk)
+        delete.delete()
+
+        messages.success(request, "Record Deleted Successfully!")
+        return redirect('home')
+    else:
+        messages.success(request, "You Must Be Logged In To Delete A Record!")
         return redirect('home')
