@@ -5,22 +5,32 @@
     <h3>{{ customer_record.firstName }} {{ customer_record.lastName }}</h3>
   </div>
   <div class="card-body">
-    <p class="card-text">
-      <strong>Customer ID: </strong>{{ customer_record.id }}
-    </p>
-    <p class="card-text"><strong>Email: </strong>{{ customer_record.email }}</p>
-    <p class="card-text"><strong>Phone: </strong>{{ customer_record.phone }}</p>
-    <p class="card-text">
-      <strong>Address: </strong>{{ customer_record.address }}
-    </p>
-    <p class="card-text"><strong>City: </strong>{{ customer_record.city }}</p>
-    <p class="card-text"><strong>State: </strong>{{ customer_record.state }}</p>
-    <p class="card-text">
-      <strong>Zipcode: </strong>{{ customer_record.zipcode }}
-    </p>
-    <p class="card-text">
-      <strong> Date of Creation: </strong>{{ customer_record.dateOfCreation }}
-    </p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Customer ID: </strong>{{ customer_record.id }}
+      </li>
+      <li class="list-group-item">
+        <strong>Email: </strong>{{ customer_record.email }}
+      </li>
+      <li class="list-group-item">
+        <strong>Phone: </strong>+{{ customer_record.phone }}
+      </li>
+      <li class="list-group-item">
+        <strong>Address: </strong>{{ customer_record.address }}
+      </li>
+      <li class="list-group-item">
+        <strong>City: </strong>{{ customer_record.city }}
+      </li>
+      <li class="list-group-item">
+        <strong>State: </strong>{{ customer_record.state }}
+      </li>
+      <li class="list-group-item">
+        <strong>Zipcode: </strong>{{ customer_record.zipcode }}
+      </li>
+      <li class="list-group-item">
+        <strong> Date of Creation: </strong>{{ customer_record.dateOfCreation }}
+      </li>
+    </ul>
   </div>
 </div>
 
