@@ -121,7 +121,7 @@ def update_record(request, pk):
         if form.is_valid():
             form.save()
             messages.success(request, "Record Updated Successfully!")
-            return redirect('home')
+            return render(request, 'record.html', {'customer_record': current_record})
 
         return render(request, 'update_record.html', {"form": form})
 
