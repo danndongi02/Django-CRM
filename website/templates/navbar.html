@@ -16,6 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         {% comment %} Show if user is logged in {% endcomment %}
         {% if user.is_authenticated %}
         <li class="nav-item">
@@ -24,23 +25,21 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
-      {% comment %} </ul> {% endcomment %}
 
       {% comment %} Show the user logged in {% endcomment %}
-        {% comment %} <ul> {% endcomment %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-              {% bs_icon 'person-fill' %}{{ user }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'add_record' %}">Profile</a>
-              <a class="dropdown-item" href="{% url 'home' %}">Stats</a>
-              <div class="dropdown-divider"></div>
-              <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
-            </div>
-          </li>
-        </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            {% bs_icon 'person-fill' %}{{ user }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Stats</a>
+            <div class="dropdown-divider"></div>
+            <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+          </div>
+        </li>
+      </ul>
 
       {% comment %} Show if user is not logged in {% endcomment %}
       {% else %}
