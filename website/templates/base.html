@@ -12,25 +12,29 @@
     />
   </head>
   <body>
-    {% comment %} Show the navbar {% endcomment %} {% include 'navbar.html' %}
+    {% comment %} Show the navbar {% endcomment %}
+    {% include 'navbar.html' %}
 
     <div class="container">
       <br />
       {% comment %} Display any messages {% endcomment %}
-      {% if messages %} {% for message in messages %}
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ message }}
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
-      </div>
-      {% endfor %} {% endif %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
+        {% endfor %}
+      {% endif %}
 
       {% comment %} Display main page {% endcomment %}
-      {% block content %} {% endblock %}
+      {% block content %}
+      {% endblock %}
     </div>
 
     <script
