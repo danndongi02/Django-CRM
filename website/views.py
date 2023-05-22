@@ -123,7 +123,7 @@ def update_record(request, pk):
             messages.success(request, "Record Updated Successfully!")
             return render(request, 'record.html', {'customer_record': current_record})
 
-        return render(request, 'update_record.html', {"form": form})
+        return render(request, 'update_record.html', {"form": form, "customer_record": current_record})
 
     else:
         messages.success(request, "You Are Not Logged In!")
